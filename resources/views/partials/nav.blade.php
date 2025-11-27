@@ -80,7 +80,7 @@
                     </li>
                 </ul>
                 <!-- Close Button -->
-                <button class="absolute top-0 right-0 bottom-0" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                <button x-cloak x-show="openMenu" class="absolute top-0 right-0 bottom-0" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-8 absolute top-2 left-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
