@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.89 34.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #eae711;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Home">
+    <g>
+      <circle class="cls-1" cx="17.45" cy="17.45" r="16.95"/>
+      <g>
+        <polyline class="cls-1" points="12.15 11.44 24.15 11.44 24.15 23.45"/>
+        <line class="cls-1" x1="10.74" y1="22.95" x2="24.15" y2="11.44"/>
+      </g>
+    </g>
+  </g>
+</svg>
