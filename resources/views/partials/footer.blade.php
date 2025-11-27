@@ -1,15 +1,15 @@
 <footer class="bg-primary">
-    <div class="container pt-20">
+    <div class="container pt-10 lg:pt-20">
         <a href="{{ route('home') }}" class="flex items-center">
             <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="size-20">
-            <span class="text-lg font-medium text-left leading-none text-white">
+            <span class="text-base md:text-lg font-medium text-left leading-none text-white">
                 WIRA <br>
                 LAND <br>
                 SKETSA
             </span>
         </a>
-        <div class="flex justify-between">
-            <div>
+        <div class="flex max-md:flex-col justify-between">
+            <div class="max-md:mb-8">
                 <p class="text-white mt-8">Kami adalah Penyedia jasa pembuatan taman <br> terbaik untuk semua wilayah se-INDONESIA</p>
                 <div class="relative mt-4">
                     <input type="text" class="block w-full text-white p-3 pe-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl border-secondary focus:ring-brand focus:border-brand shadow-xs placeholder:text-white" placeholder="Tulis email kami disini..." required />
@@ -39,6 +39,6 @@
                 </div>
             </div>
         </div>
-        <div class="bg-secondary mt-20 p-3 text-center font-medium">&copy; {{ date('Y') }} Copyright PT Wira Land Sketsa, All rights reserved.</div>
+        <div class="bg-secondary mt-20 p-1 md:p-3 text-[10px] md:text-base text-center font-medium">&copy; {{ date('Y') }} Copyright PT Wira Land Sketsa, All rights reserved.</div>
     </div>
 </footer>
