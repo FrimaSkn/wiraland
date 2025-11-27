@@ -34,7 +34,7 @@ if (document.querySelector('.splide')) {
                 perPage: 3,
             },
             480: {
-                perPage: 2,
+                perPage: 3,
             },
         },
     });

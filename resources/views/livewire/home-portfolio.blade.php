@@ -1,7 +1,7 @@
 <div x-data="tab">
     <h3 class="section-title text-center text-underline">Portfolio Kami</h3>
 
-    <div class="flex gap-4 justify-center items-center mb-16">
+    <div class="flex max-lg:flex-wrap gap-4 justify-center items-center mb-16">
         <button x-on:click="tab = 'all'"
             class="px-2.5 py-0.5 text-sm rounded-full bg-secondary hover:bg-primary uppercase font-medium hover:text-white"
             x-bind:class="{ '!bg-primary text-white': tab == 'all' }">semua</button>

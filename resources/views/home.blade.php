@@ -15,21 +15,21 @@
 
     <x-circular />
 
-    <section class="pt-60 pb-20 container space-y-6">
-        <h3 class="text-center text-primary text-[2.7rem] font-bold leading-tight">Membangun hunian & ruang usaha yang bernilai tinggi bagi masa depan Anda.</h3>
+    <section class="pt-20 lg:pt-60 pb-20 container space-y-6">
+        <h3 class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">Membangun hunian & ruang usaha yang bernilai tinggi bagi masa depan Anda.</h3>
         <p class="text-center">Wira Land Sketsa adalah perusahaan yang bergerak di bidang properti dan pengembangan lahan, berfokus pada menciptakan hunian dan ruang usaha yang inovatif, fungsional, serta bernilai investasi tinggi. Dengan komitmen pada kualitas dan ketepatan, Wira Land Sketsa hadir untuk menghadirkan solusi properti yang sesuai dengan kebutuhan pasar modern.</p>
         <img src="{{ asset('assets/images/img-video.jpg') }}" alt="">
     </section>
 
     <section class="grid grid-cols-3">
         <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-01.jpg') }}')">
-            <h3 class="text-center text-white text-3xl font-bold">PLANNING</h3>
+            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">PLANNING</h3>
         </div>
         <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-02.jpg') }}')">
-            <h3 class="text-center text-white text-3xl font-bold">CONSTRUCTION</h3>
+            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">CONSTRUCTION</h3>
         </div>
         <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-03.jpg') }}')">
-            <h3 class="text-center text-white text-3xl font-bold">MAINTENANCE</h3>
+            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">MAINTENANCE</h3>
         </div>
     </section>
 
@@ -81,10 +81,9 @@
 
     <x-success-story />
 
-
     <section class="container pb-20">
         <h3 class="section-title text-center text-underline">Artikel</h3>
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid lg:grid-cols-3 gap-6">
             @for ($i = 0; $i < 3; $i++)
                 <div class="">
                     <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
@@ -101,16 +100,16 @@
     <section class="bg-center bg-cover pb-20" style="background-image: url('{{ asset('assets/images/bg-testimonial.jpg') }}')">
         <div class="container">
             <h3 class="section-title text-center text-underline primary">Testimonial</h3>
-            <div class="bg-white py-6 px-16 rounded-3xl">
-                <div class="py-10"><x-star /></div>
-                <p class="text-center text-xl leading-loose">“PT Wira Land Sketsa telah memberikan pelayanan yang sangat profesional dalam penataan landscape. Mulai dari perencanaan hingga hasil akhir, semuanya dikerjakan dengan detail, rapi, dan sesuai kebutuhan kami. Hasilnya tidak hanya mempercantik area, tetapi juga meningkatkan nilai properti. Kami sangat mengapresiasi dedikasi dan kualitas kerja tim Wira Land Sketsa.”</p>
+            <div class="bg-white py-3 lg:py-6 px-6 lg:px-16 rounded-3xl">
+                <div class="py-4 lg:py-10"><x-star /></div>
+                <p class="text-center lg:text-xl lg:leading-loose">“PT Wira Land Sketsa telah memberikan pelayanan yang sangat profesional dalam penataan landscape. Mulai dari perencanaan hingga hasil akhir, semuanya dikerjakan dengan detail, rapi, dan sesuai kebutuhan kami. Hasilnya tidak hanya mempercantik area, tetapi juga meningkatkan nilai properti. Kami sangat mengapresiasi dedikasi dan kualitas kerja tim Wira Land Sketsa.”</p>
                 <div class="text-center text-xl mt-8"><span class="text-primary font-bold">Jonathan Doe,</span> Direktur Sarinah Indonesia</div>
             </div>
         </div>
     </section>
 
     <section class="relative">
-        <h3 class="section-title !text-white text-center absolute top-0 left-1/2 -translate-x-1/2 text-underline">Kami Siap Membantu Kebutuhan Landscaping Anda!</h3>
+        <h3 class="section-title max-lg:py-8 max-lg:text-xs !text-white w-full text-center absolute top-0 left-1/2 -translate-x-1/2 text-underline">Kami Siap Membantu Kebutuhan Landscaping Anda!</h3>
         <img class="w-full h-auto object-center" src="{{ asset('assets/images/img-05.jpg') }}" alt="{{ config('app.name') }}">
     </section>
 
