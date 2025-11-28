@@ -7,11 +7,11 @@
     <x-grid-paragraf title="Kami Siap Membantu Mewujudkan Ruang Hijau Impian Anda"
         desc="Baik untuk proyek perumahan, fasilitas publik, hingga area komersial, tim ahli kami siap memberikan solusi lanskap terbaik yang sesuai dengan kebutuhan Anda." />
 
-    <section class="bg-secondary mx-8 mt-10 rounded-[3rem] mb-20 p-10">
-        <div class="flex gap-16">
-            <div class="basis-[45%] 2xl:basis-[35%]"><img class="w-full h-auto object-cover lg:rounded-[3rem] 2xl:rounded-[4rem]" src="{{ asset('assets/images/image-contact.jpg') }}" alt=""></div>
+    <section class="bg-secondary mx-2 lg:mx-8 mt-10 rounded-4xl lg:rounded-[3rem] mb-20 p-4 lg:p-10">
+        <div class="flex lg:flex-row flex-col gap-16">
+            <div class="basis-[45%] 2xl:basis-[35%]"><img class="w-full h-auto object-cover rounded-3xl lg:rounded-[3rem] 2xl:rounded-[4rem]" src="{{ asset('assets/images/image-contact.jpg') }}" alt=""></div>
             <div class="basis-[55%] 2xl:basis-[65%]">
-                <div class="text-primary font-bold text-4xl mb-16">Tinggalkan Pesan untuk Kami</div>
+                <div class="text-primary font-bold text-2xl lg:text-4xl mb-16">Tinggalkan Pesan untuk Kami</div>
                 <form action="#" class="space-y-8">
                     @csrf
                     <div>

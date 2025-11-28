@@ -215,7 +215,7 @@
 
     /* success-story */
     .success-story {
-        @apply bg-primary flex max-lg:flex-col gap-6 lg:gap-16 my-10;
+        @apply bg-primary lg:flex gap-6 lg:gap-16 my-10;
 
         .image-section {
             @apply basis-[45%];

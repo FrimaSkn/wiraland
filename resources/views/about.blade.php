@@ -3,15 +3,15 @@
 @section('content')
 
 <x-banner-hero image="{{ asset('assets/images/about-banner.jpg') }}" />
-<section class="py-20">
+<section class="py-12 md:py-20">
     <x-grid-paragraf title="Kami membangun lebih dari sekadar bangunan"
         desc="Setiap proyek kami lahir dari riset, empati, dan dedikasi. Hasilnya bukan hanya tempat tinggal, tapi ruang hidup yang memberi kenyamanan dan kebanggaan bagi setiap penghuninya." />
 </section>
 
 <section class="bg-secondary mx-[1%] rounded-4xl p-10 space-y-8">
     <div class="bg-primary py-2 px-4 text-white rounded-full w-fit font-bold">Misi Kami</div>
-    <div class="grid grid-cols-2 gap-[10%]">
-        <div class="rounded-[3rem] overflow-hidden">
+    <div class="grid md:grid-cols-2 gap-4 md:gap-[10%]">
+        <div class="rounded-2xl md:rounded-[3rem] overflow-hidden">
             <img class="w-full h-auto object-cover object-center"
                 src="{{ asset('assets/images/img-misi.jpg') }}" alt="">
         </div>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="bg-primary py-2 px-4 text-white rounded-full w-fit font-bold">Visi Kami</div>
-    <img class="w-full h-auto object-center rounded-[3rem]"
+    <img class="w-full h-auto object-center rounded-2xl md:rounded-[3rem]"
         src="{{ asset('assets/images/img-visi.jpg') }}" alt="">
     <p class="text-center font-bold">Menjadi Perusahaan lansekap skala nasional yang memperhatikan aspek- aspek
         harmonisasi lingkungan.</p>
@@ -98,7 +98,7 @@
 <section class="container pb-16">
     <h3 class="section-title text-center">Profesional Terbaik di Balik Setiap Karya Kami</h3>
 
-    <div class="grid grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
         @for ($i = 0; $i < 8; $i++)
             <div class="border border-gray-300 rounded-2xl px-4 pt-8 pb-4 aspect-[245/313] flex flex-col justify-center relative
             before:content-[''] before:absolute before:-top-0.5 before:inset-x-0 before:w-full before:h-4 before:bg-secondary before:rounded-full

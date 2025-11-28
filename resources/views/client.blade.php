@@ -9,7 +9,7 @@
         <p class="text-center">Kami bangga telah dipercaya oleh berbagai pengembang, arsitek, instansi, dan klien pribadi di seluruh Indonesia.
             Kerja sama ini menjadi bukti komitmen Wira Land Sketsa dalam menghadirkan lanskap yang fungsional, estetis, dan berkelanjutan.
         </p>
-        <ul class="grid grid-cols-5">
+        <ul class="grid grid-cols-3 md:grid-cols-5">
             <li class="p-2">
                 <img src="{{ asset('assets/images/partner/logo-adhi.png') }}" alt="">
             </li>

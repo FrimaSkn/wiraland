@@ -3,7 +3,7 @@
     'desc' => ''
 ])
 
-<div class="grid grid-cols-2 gap-[10%] container">
+<div class="md:grid grid-cols-2 gap-[10%] container max-md:space-y-3">
     <div class="section-title !py-0">{{ $title }}</div>
     <div>{{ $desc }}</div>
 </div>
