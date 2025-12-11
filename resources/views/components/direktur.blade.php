@@ -5,15 +5,13 @@
         </div>
         <div class="col-span-12 lg:col-span-7 pb-8 lg:pr-[20%] flex items-center">
             <div class="max-lg:text-center max-md:container">
-                <h3 class="section-title text-underline left-m-center">Kata Pengantar dari Direktur</h3>
-                <p class="font-bayshore text-4xl lg:text-7xl text-primary leading-none">Solusi Properti Inovatif, <br> Bernilai Investasi Tinggi</p>
-                <p class="mb-8">
-                    PT Wira Land Sketsa terus berkembang dan berkomitmen menghadirkan solusi properti yang inovatif, fungsional, dan bernilai investasi tinggi.
-                    <br><br>
-                    Bagi kami, properti bukan hanya bangunan, melainkan ruang yang memberi kenyamanan dan nilai jangka panjang. Dengan tim yang solid dan dukungan para mitra, kami siap mewujudkan karya terbaik yang relevan dengan kebutuhan pasar modern.
-                </p>
-                <h3 class="text-2xl lg:text-3xl font-bold text-primary">Wiwiek Murdiastuti</h3>
-                <h4 class="max-lg:text-sm">DIREKTUR PT WIRA LAND SKETSA</h4>
+                <h3 class="section-title text-underline left-m-center">{{ $generalContent->director[0]['title'] }}</h3>
+                <p class="text-xl lg:text-5xl xl:text-7xl text-primary leading-none mb-4 font-birthstone">{!! nl2br($generalContent->director[0]['tagline']) !!}</p>
+                <div class="mb-8">
+                    {!! str($generalContent->director[0]['message'])->sanitizeHtml() !!}
+                </div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-primary">{{ $generalContent->director[0]['name'] }}</h3>
+                <h4 class="max-lg:text-sm">{{ $generalContent->director[0]['position'] }}</h4>
             </div>
         </div>
     </div>

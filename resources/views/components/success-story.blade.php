@@ -1,9 +1,10 @@
 @props([
     'loop' => 1,
+    'page' => null,
 ])
 
 @for ($i = 0; $i < $loop; $i++)
-    <section class="success-story">
+    <section class="success-story {{ $page === 'home' ? 'home':'' }}">
         <div class="image-section">
             <img class="w-full h-auto object-cover" src="{{ asset('assets/images/img-04.jpg') }}" alt="{{ config('app.name') }}">
         </div>

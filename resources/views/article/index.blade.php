@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Artikel')
 @section('content')
-<x-banner-hero image="{{ asset('assets/images/about-banner.jpg') }}" />
+<x-banner-hero image="{{ Storage::disk('public_pages')->url($banner) }}" />
 
 <h3 class="section-title text-center text-underline">Artikel</h3>
-<x-grid-paragraf title="Baca artikel terbaru kami"
-    desc="Kami berbagi cerita, wawasan, dan inspirasi seputar desain lanskap, arsitektur, serta proses kreatif di balik setiap proyek kami." />
+<x-grid-paragraf title="{{ $grid_title }}"
+    desc="{{ $grid_desc }}" />
 
 <section class="my-20 container">
     <div class="grid lg:grid-cols-3 gap-x-10 gap-y-20">

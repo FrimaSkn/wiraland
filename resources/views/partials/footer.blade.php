@@ -22,19 +22,19 @@
                 <div>
                     <div class="font-bold text-white mb-6">Links</div>
                     <ul class="space-y-2 *:text-nowrap">
-                        <li><a href="#" class="text-white hover:underline">Artikel</a></li>
-                        <li><a href="#" class="text-white hover:underline">Kisah Sukses</a></li>
-                        <li><a href="#" class="text-white hover:underline">Testimonial</a></li>
-                        <li><a href="#" class="text-white hover:underline">Kontak</a></li>
-                        <li><a href="#" class="text-white hover:underline">FAQ</a></li>
+                        <li><a href="{{ route('article.index') }}" class="text-white hover:underline">Artikel</a></li>
+                        <li><a href="{{ route('success-stories') }}" class="text-white hover:underline">Kisah Sukses</a></li>
+                        <li><a href="{{ route('testimonial') }}" class="text-white hover:underline">Testimonial</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-white hover:underline">Kontak</a></li>
+                        <li><a href="{{ route('faq') }}" class="text-white hover:underline">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="font-bold text-white text-nowrap mb-6">Social Media</div>
                     <ul class="space-y-2 *:text-nowrap">
-                        <li><a href="#" class="text-white hover:underline">Instagram</a></li>
-                        <li><a href="#" class="text-white hover:underline">Facebook</a></li>
-                        <li><a href="#" class="text-white hover:underline">LinkedIn</a></li>
+                        @foreach ($generalContent->social_media as $sosmed)
+                            <li><a href="{{ $sosmed['link'] }}" target="_blank" class="text-white hover:underline">{{ $sosmed['name'] }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer(
+            ['components.direktur', 'components.circular', 'partials.footer'],
+            function ($view) {
+                $view->with([
+                    'generalContent' => new \App\Settings\GeneralSetting,
+                ]);
+            }
+        );
     }
 }

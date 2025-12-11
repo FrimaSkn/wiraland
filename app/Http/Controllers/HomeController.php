@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partner;
+use App\Settings\SettingHome;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(SettingHome $homeSetting)
     {
-        return view('home');
+        $clients  = Partner::all();
+        return view('home', [
+            'homeContent' => $homeSetting,
+            'clients' => $clients
+        ]);
     }
 }

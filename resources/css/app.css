@@ -12,6 +12,7 @@
 
     --font-montserraat: "Montserrat", sans-serif;
     --font-bayshore: "Bayshore", sans-serif;
+    --font-birthstone : "Birthstone", sans-serif;
 
     --color-primary: #006838;
     --color-secondary: #EAE711;
@@ -225,11 +226,21 @@
             @apply basis-[55%] lg:pr-[15%] max-lg:container max-lg:pb-10;
         }
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
             flex-direction: row-reverse;
 
             .content-section {
                 @apply container;
+            }
+        }
+
+        &.home {
+            &:nth-child(even) {
+                flex-direction: row;
+
+                .content-section {
+                    padding-inline: unset;
+                }
             }
         }
 
@@ -244,6 +255,18 @@
         }
     }
     /* end success-story */
+
+    .card-service {
+        @apply p-6 border border-primary md:grid md:grid-cols-7 rounded-4xl gap-[5%] max-md:space-y-3;
+
+        &:nth-child(even) {
+            @apply bg-primary;
+
+            h3, p {
+                @apply text-white;
+            }
+        }
+    }
 }
 
 

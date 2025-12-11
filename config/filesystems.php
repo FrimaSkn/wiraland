@@ -60,6 +60,51 @@ return [
             'report' => false,
         ],
 
+        'public_articles' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/articles'),
+            'url' => env('APP_URL').'/storage/articles',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'public_partners' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/partners'),
+            'url' => env('APP_URL').'/storage/partners',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'public_pages' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/pages'),
+            'url' => env('APP_URL').'/storage/pages',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'public_portfolios' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/portfolios'),
+            'url' => env('APP_URL').'/storage/portfolios',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'public_teams' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/teams'),
+            'url' => env('APP_URL').'/storage/teams',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*

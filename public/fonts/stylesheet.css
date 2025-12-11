@@ -48,3 +48,11 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Birthstone';
+    src: url('Birthstone-Regular.woff2') format('woff2'),
+        url('Birthstone-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

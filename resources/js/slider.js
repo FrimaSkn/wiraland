@@ -2,8 +2,15 @@
 import { Splide } from '@splidejs/splide';
 import '@splidejs/splide/css';
 
-// if exist
-if (document.querySelector('.splide')) {
+function ifexists(selector, callback) {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length > 0) {
+        callback(elements);
+    }
+}
+
+
+ifexists('.banner_slider', (elements) => {
     // import splidejs slider for banner slider
     let bannerSlider = new Splide('.banner_slider', {
         type       : 'loop',
@@ -13,10 +20,10 @@ if (document.querySelector('.splide')) {
         pauseOnHover: false,
         pauseOnFocus: false,
     });
-
     bannerSlider.mount();
+});
 
-
+ifexists('.partner_slider', (elements) => {
     // import splidejs slider for partner slider
     let partnerSlider = new Splide('.partner_slider', {
         type       : 'loop',
@@ -38,12 +45,11 @@ if (document.querySelector('.splide')) {
             },
         },
     });
-
     partnerSlider.mount();
+});
 
-
-    let portfolioSlider = new Splide('.portfolio_slider', {
-        type       : 'loop',
+ifexists('.portfolio_slider', (elements) => {
+    let options = {
         perPage    : 3,
         gap        : '1rem',
         autoplay   : true,
@@ -60,7 +66,41 @@ if (document.querySelector('.splide')) {
                 perPage: 1,
             },
         },
-    });
+    };
 
+    let portfolioSlider = new Splide('.portfolio_slider', options);
     portfolioSlider.mount();
-}
+
+    document.addEventListener('reinitSlider', () => {
+        portfolioSlider.destroy();
+        new Splide('.portfolio_slider', options).mount();
+    });
+});
+
+
+ifexists('.testimonial_slider', (elements) => {
+    let testimonialSlider = new Splide('.testimonial_slider', {
+        type       : 'loop',
+        perPage    : 1,
+        padding    : '25vw',
+        gap        : '1rem',
+        autoplay   : true,
+        interval   : 8000,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        pagination: false,
+        arrows: false,
+        breakpoints: {
+            1024: {
+                padding: '15vw',
+            },
+            768: {
+                padding: '10vw',
+            },
+            480: {
+                padding: '2vw',
+            },
+        },
+    });
+    testimonialSlider.mount();
+});

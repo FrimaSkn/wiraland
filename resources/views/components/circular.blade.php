@@ -1,7 +1,16 @@
 <div class="relative">
     <div class="absolute inset-0 flex items-center justify-center z-50">
         <div class="container grid grid-cols-3 gap-[5%] lg:gap-[10%] py-4 px-[9%]">
-            <div class="w-full aspect-square bg-secondary rounded-full p-4 lg:p-12 flex justify-center items-start">
+            @foreach ($generalContent->circular as $item)
+                <div class="w-full aspect-square bg-secondary rounded-full p-4 lg:p-12 flex justify-center items-start">
+                    <div class="space-y-1 lg:space-y-4">
+                        <img class="size-[25%] mx-auto"  src="{{ Storage::disk('public_pages')->url($item['icon']) }}" alt="">
+                        <div class="font-bold text-[8px] lg:text-4xl text-center">{{ $item['number'] }}</div>
+                        <div class="font-bold text-[6px] lg:text-lg text-center uppercase">{{ $item['text'] }}</div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="w-full aspect-square bg-secondary rounded-full p-4 lg:p-12 flex justify-center items-start">
                 <div class="space-y-1 lg:space-y-4">
                     <img class="size-[25%] mx-auto"  src="{{ asset('assets/svg/asset-01.svg') }}" alt="">
                     <div class="font-bold text-[8px] lg:text-4xl text-center">+1,900</div>
@@ -21,7 +30,7 @@
                     <div class="font-bold text-[8px] lg:text-4xl text-center">+700</div>
                     <div class="font-bold text-[6px] lg:text-lg text-center uppercase">klien puas</div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

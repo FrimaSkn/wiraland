@@ -3,6 +3,6 @@
         <div class="text-white text-lg lg:text-5xl font-bold mb-10 lg:mb-18">Siap wujudkan ruang impian <br>
             bersama Wira Land?
         </div>
-        <a href="{{ route('contact') }}" class="px-5 py-2 text-lg rounded-full bg-secondary hover:bg-primary font-medium hover:text-white">Kontak Kami</a>
+        <a href="{{ route('contact', '#contact-form') }}" class="px-5 py-2 text-lg rounded-full bg-secondary hover:bg-primary font-medium hover:text-white">Kontak Kami</a>
     </div>
 </div>

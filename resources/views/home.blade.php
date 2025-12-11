@@ -4,11 +4,11 @@
     <section class="banner_slider splide w-full" aria-label="Basic Structure Example">
         <div class="splide__track">
             <ul class="splide__list flex">
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($homeContent->banner as $banner)
                     <li class="splide__slide">
-                        <img class="w-full aspect-[19/8] object-cover" src="{{ asset('assets/images/banner.png') }}" alt="">
+                        <img class="w-full aspect-[19/8] object-cover" src="{{ Storage::disk('public_pages')->url($banner['image']) }}" alt="">
                     </li>
-                @endfor
+                @endforeach
             </ul>
         </div>
     </section>
@@ -16,21 +16,20 @@
     <x-circular />
 
     <section class="pt-20 lg:pt-60 pb-20 container space-y-6">
-        <h3 class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">Membangun hunian & ruang usaha yang bernilai tinggi bagi masa depan Anda.</h3>
-        <p class="text-center">Wira Land Sketsa adalah perusahaan yang bergerak di bidang properti dan pengembangan lahan, berfokus pada menciptakan hunian dan ruang usaha yang inovatif, fungsional, serta bernilai investasi tinggi. Dengan komitmen pada kualitas dan ketepatan, Wira Land Sketsa hadir untuk menghadirkan solusi properti yang sesuai dengan kebutuhan pasar modern.</p>
-        <img src="{{ asset('assets/images/img-video.jpg') }}" alt="">
+        <h3 class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">{{ $homeContent->section_one_title }}</h3>
+        <p class="text-center">{{ nl2br($homeContent->section_one_desc) }}</p>
+        <video class="w-full aspect-video" controls>
+            <source src="{{ Storage::disk('public_pages')->url($homeContent->section_one_video) }}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+        </video>
     </section>
 
     <section class="grid grid-cols-3">
-        <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-01.jpg') }}')">
-            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">PLANNING</h3>
-        </div>
-        <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-02.jpg') }}')">
-            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">CONSTRUCTION</h3>
-        </div>
-        <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ asset('assets/images/img-03.jpg') }}')">
-            <h3 class="text-center text-white text-xs lg:text-3xl font-bold">MAINTENANCE</h3>
-        </div>
+        @foreach ($homeContent->services as $service)
+            <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ Storage::disk('public_pages')->url($service['image']) }}')">
+                <h3 class="text-center text-white text-xs lg:text-3xl font-bold">{{ strtoupper($service['text']) }}</h3>
+            </div>
+        @endforeach
     </section>
 
     <section class="container pb-20">
@@ -38,36 +37,11 @@
         <div class="partner_slider splide">
             <div class="splide__track">
                 <ul class="splide__list flex">
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-adhi.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-wika.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-nindya.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-pp.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-pupr.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-waskita.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-sarinah.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-g20.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-abipraya.png') }}" alt="">
-                    </li>
-                    <li class="splide__slide flex items-center justify-center p-2">
-                        <img src="{{ asset('assets/images/partner/logo-nusantara.png') }}" alt="">
-                    </li>
+                    @foreach ($clients as $client)
+                        <li class="splide__slide flex items-center justify-center p-2">
+                            <img src="{{ $client->getFirstMediaUrl('partner_logo') }}" alt="{{ $client->name }}">
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -79,7 +53,7 @@
         <livewire:home-portfolio />
     </section>
 
-    <x-success-story />
+    <x-success-story page="home" />
 
     <section class="container pb-20">
         <h3 class="section-title text-center text-underline">Artikel</h3>
@@ -101,7 +75,7 @@
         <div class="container">
             <h3 class="section-title text-center text-underline primary">Testimonial</h3>
             <div class="bg-white py-3 lg:py-6 px-6 lg:px-16 rounded-3xl">
-                <div class="py-4 lg:py-10"><x-star /></div>
+                <div class="py-4 lg:py-10"><x-star class="fill-secondary"/></div>
                 <p class="text-center lg:text-xl lg:leading-loose">“PT Wira Land Sketsa telah memberikan pelayanan yang sangat profesional dalam penataan landscape. Mulai dari perencanaan hingga hasil akhir, semuanya dikerjakan dengan detail, rapi, dan sesuai kebutuhan kami. Hasilnya tidak hanya mempercantik area, tetapi juga meningkatkan nilai properti. Kami sangat mengapresiasi dedikasi dan kualitas kerja tim Wira Land Sketsa.”</p>
                 <div class="text-center text-xl mt-8"><span class="text-primary font-bold">Jonathan Doe,</span> Direktur Sarinah Indonesia</div>
             </div>
@@ -109,8 +83,8 @@
     </section>
 
     <section class="relative">
-        <h3 class="section-title max-lg:py-8 max-lg:text-xs !text-white w-full text-center absolute top-0 left-1/2 -translate-x-1/2 text-underline">Kami Siap Membantu Kebutuhan Landscaping Anda!</h3>
-        <img class="w-full h-auto object-center" src="{{ asset('assets/images/img-05.jpg') }}" alt="{{ config('app.name') }}">
+        <h3 class="section-title max-lg:py-8 max-lg:text-xs !text-white w-full text-center absolute top-0 left-1/2 -translate-x-1/2 text-underline">{{ $homeContent->section_image[0]['title'] }}</h3>
+        <img class="w-full h-auto object-center" src="{{ Storage::disk('public_pages')->url($homeContent->section_image[0]['bg_image']) }}" alt="{{ config('app.name') }}">
     </section>
 
     <x-section-contact />

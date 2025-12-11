@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Kontak Kami')
 @section('content')
-    <x-banner-hero image="{{ asset('assets/images/about-banner.jpg') }}" />
+    <x-banner-hero image="{{ Storage::disk('public_pages')->url($banner) }}" />
 
-    <h3 class="section-title text-center text-underline">Kontak Kami</h3>
-    <x-grid-paragraf title="Kami Siap Membantu Mewujudkan Ruang Hijau Impian Anda"
-        desc="Baik untuk proyek perumahan, fasilitas publik, hingga area komersial, tim ahli kami siap memberikan solusi lanskap terbaik yang sesuai dengan kebutuhan Anda." />
+    <h3 id="contact-form" class="section-title text-center text-underline">Kontak Kami</h3>
+    <x-grid-paragraf title="{{ $grid_title }}"
+        desc="{{ $grid_desc }}" />
 
     <section class="bg-secondary mx-2 lg:mx-8 mt-10 rounded-4xl lg:rounded-[3rem] mb-20 p-4 lg:p-10">
         <div class="flex lg:flex-row flex-col gap-16">
