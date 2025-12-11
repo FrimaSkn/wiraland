@@ -12,25 +12,33 @@
             <div class="basis-[45%] 2xl:basis-[35%]"><img class="w-full h-auto object-cover rounded-3xl lg:rounded-[3rem] 2xl:rounded-[4rem]" src="{{ asset('assets/images/image-contact.jpg') }}" alt=""></div>
             <div class="basis-[55%] 2xl:basis-[65%]">
                 <div class="text-primary font-bold text-2xl lg:text-4xl mb-16">Tinggalkan Pesan untuk Kami</div>
-                <form action="#" class="space-y-8">
+                <form action="{{ route('contact.store') }}" class="space-y-8" method="POST">
                     @csrf
                     <div>
                         <label for="name" class="block mb-2.5 text-base font-bold text-primary text-heading">Nama Kamu</label>
-                        <input type="text" id="name" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Nama kamu" required />
+                        <input type="text" id="name" name="name" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Nama kamu" required />
                     </div>
                     <div>
                         <label for="email" class="block mb-2.5 text-base font-bold text-primary text-heading">Alamat Email Kamu</label>
-                        <input type="email" id="email" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Alamat email kamu" required />
+                        <input type="email" id="email" name="email" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Alamat email kamu" required />
                     </div>
                     <div>
-                        <label for="email" class="block mb-2.5 text-base font-bold text-primary text-heading">Nomor Telepon Kamu</label>
-                        <input type="email" id="email" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Nomor telepon kamu" required />
+                        <label for="phone" class="block mb-2.5 text-base font-bold text-primary text-heading">Nomor Telepon Kamu</label>
+                        <input type="text" id="phone" name="phone" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Nomor telepon kamu" required />
                     </div>
                     <div>
                         <label for="message" class="block mb-2.5 text-base font-bold text-primary text-heading">Pesan</label>
-                        <textarea id="message" rows="8" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Isi pesan disini..."></textarea>
+                        <textarea id="message" name="message" rows="8" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Isi pesan disini..."></textarea>
                     </div>
-                    <button class="px-6 py-2.5 bg-primary rounded-full text-secondary font-bold">Kirim</button>
+                    <div>
+                        <x-recaptcha />
+                        @error('g-recaptcha-response')
+                            <small class="text-red-500">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                    </div>
+                    <button class="px-6 py-2.5 bg-primary rounded-full text-secondary font-bold shadow hover:scale-105 transition-transform duration-300">Kirim</button>
                 </form>
             </div>
         </div>

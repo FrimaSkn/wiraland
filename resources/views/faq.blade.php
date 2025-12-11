@@ -38,7 +38,7 @@
 
     <div class="mt-8 md:mt-14 flex flex-col items-center gap-6 justify-center">
         <h3 class="text-lg md:text-xl lg:text-3xl font-bold text-center text-primary">Masih punya pertanyaan?</h3>
-        <a href="{{ route('contact', '#contact-form') }}" class="px-5 py-2 text-base md:text-lg rounded-full bg-secondary hover:bg-primary font-medium hover:text-white mx-auto">Hubungi kami sekarang</a>
+        <a href="{{ route('contact.index', '#contact-form') }}" class="px-5 py-2 text-base md:text-lg rounded-full bg-secondary hover:bg-primary font-medium hover:text-white mx-auto">Hubungi kami sekarang</a>
     </div>
 </section>
 

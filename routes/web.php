@@ -20,7 +20,10 @@ Route::group(['prefix' => 'artikel', 'as' => 'article.'], function () {
 
 Route::get('/success-stories', [App\Http\Controllers\SuccessStoriesController::class, 'index'])->name('success-stories');
 
-Route::get('/kontak', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::group(['prefix' => 'kontak', 'as' => 'contact.'], function () {
+    Route::get('/', [App\Http\Controllers\ContactController::class, 'index'])->name('index');
+    Route::post('/store', [App\Http\Controllers\ContactController::class, 'store'])->name('store');
+});
 
 Route::get('/faq', [App\Http\Controllers\FaqController::class, 'index'])->name('faq');
 

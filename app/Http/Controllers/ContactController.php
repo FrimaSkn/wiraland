@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Settings\SettingContact;
+use App\Rules\Captcha;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Settings\SettingContact;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreContactRequest;
 
 class ContactController extends Controller
 {
@@ -14,5 +18,23 @@ class ContactController extends Controller
             'grid_title' => $manageContact->grid_title,
             'grid_desc' => $manageContact->grid_desc
         ]);
+    }
+
+
+
+    public function store(StoreContactRequest $request)
+    {
+        dd('masuk');
+
+        DB::beginTransaction();
+        try {
+            $store = Contact::create($validated);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            //throw $th;
+        }
+        DB::commit();
+
+        return redirect()->back()->with('success', 'Pesan kamu berhasil dikirim');
     }
 }

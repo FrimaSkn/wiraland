@@ -10,15 +10,10 @@
                 </svg>
             </button>
             <a href="{{ route('home') }}" class="flex items-center justify-center">
-                <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="size-12 md:size-16">
-                <span class="text-xs md:text-base font-medium text-left leading-none">
-                    WIRA <br>
-                    LAND <br>
-                    SKETSA
-                </span>
+                <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-12 md:h-16">
             </a>
         </div>
-        <div>
+        <div class="max-md:hidden">
             <h3 class="text-xs md:text-xl">LANDSCAPE SPECIALIST</h3>
             <h4 class="text-[9px] md:text-xs font-bold flex items-center space-x-1">
                 <span>DESIGN</span>
@@ -74,7 +69,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}" class="nav-link {{ activeMenu('contact') }}">
+                        <a href="{{ route('contact.index') }}" class="nav-link {{ activeMenu('contact.index') }}">
                             CONTACT
                         </a>
                     </li>

@@ -1,12 +1,7 @@
 <footer class="bg-primary">
     <div class="container pt-10 lg:pt-20">
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="size-20">
-            <span class="text-base md:text-lg font-medium text-left leading-none text-white">
-                WIRA <br>
-                LAND <br>
-                SKETSA
-            </span>
+            <img src="{{ asset('assets/brand/logo-03.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-20 -ml-4">
         </a>
         <div class="flex max-lg:flex-col justify-between">
             <div class="max-lg:mb-8">
@@ -25,7 +20,7 @@
                         <li><a href="{{ route('article.index') }}" class="text-white hover:underline">Artikel</a></li>
                         <li><a href="{{ route('success-stories') }}" class="text-white hover:underline">Kisah Sukses</a></li>
                         <li><a href="{{ route('testimonial') }}" class="text-white hover:underline">Testimonial</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-white hover:underline">Kontak</a></li>
+                        <li><a href="{{ route('contact.index') }}" class="text-white hover:underline">Kontak</a></li>
                         <li><a href="{{ route('faq') }}" class="text-white hover:underline">FAQ</a></li>
                     </ul>
                 </div>
