@@ -13,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class EmailSubscriptionResource extends Resource
 {
@@ -21,6 +22,10 @@ class EmailSubscriptionResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'EmailSubscription';
+
+    protected static string | UnitEnum | null $navigationGroup = 'Email Subscriptions';
+
+    protected static ?int $navigationSort = 18;
 
     public static function form(Schema $schema): Schema
     {

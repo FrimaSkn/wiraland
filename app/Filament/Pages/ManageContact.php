@@ -9,12 +9,17 @@ use Filament\Pages\SettingsPage;
 use Filament\Support\Icons\Heroicon;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Filament\Forms;
+use UnitEnum;
 
 class ManageContact extends SettingsPage
 {
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static string $settings = SettingContact::class;
+
+    protected static string | UnitEnum | null $navigationGroup = 'Contact';
+
+    protected static ?int $navigationSort = 13;
 
     public function form(Schema $schema): Schema
     {

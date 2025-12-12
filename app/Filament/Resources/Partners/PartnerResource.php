@@ -25,6 +25,8 @@ class PartnerResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Clients';
 
+    protected static ?int $navigationSort = 6;
+
     public static function form(Schema $schema): Schema
     {
         return PartnerForm::configure($schema);

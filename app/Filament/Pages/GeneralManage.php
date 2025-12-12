@@ -15,12 +15,17 @@ use Filament\Forms\Components\Repeater;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Forms\Components\Builder\Block;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use UnitEnum;
 
 class GeneralManage extends SettingsPage
 {
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static string $settings = GeneralSetting::class;
+
+    protected static string | UnitEnum | null $navigationGroup = 'General Settings';
+
+    protected static ?int $navigationSort = 20;
 
     public function form(Schema $schema): Schema
     {

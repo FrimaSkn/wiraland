@@ -9,12 +9,17 @@ use App\Settings\SettingArticle;
 use Filament\Pages\SettingsPage;
 use Filament\Support\Icons\Heroicon;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use UnitEnum;
 
 class ManageArticle extends SettingsPage
 {
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static string $settings = SettingArticle::class;
+
+    protected static string | UnitEnum | null $navigationGroup = 'Articles';
+
+    protected static ?int $navigationSort = 9;
 
     public function form(Schema $schema): Schema
     {

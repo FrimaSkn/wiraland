@@ -25,7 +25,7 @@ class TeamsResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Team';
 
-
+    protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
     {

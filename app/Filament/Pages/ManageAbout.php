@@ -21,6 +21,7 @@ class ManageAbout extends SettingsPage
 
     protected static string | UnitEnum | null $navigationGroup = 'About';
 
+    protected static ?int $navigationSort = 2;
 
     public function form(Schema $schema): Schema
     {

@@ -30,14 +30,17 @@
                         <label for="message" class="block mb-2.5 text-base font-bold text-primary text-heading">Pesan</label>
                         <textarea id="message" name="message" rows="8" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Isi pesan disini..."></textarea>
                     </div>
-                    <div>
-                        <x-recaptcha />
-                        @error('g-recaptcha-response')
-                            <small class="text-red-500">
-                                {{ $message }}
-                            </small>
-                        @enderror
-                    </div>
+                    @if (env('GOOGLE_RECAPTCHA_STATUS'))
+                        <div>
+                            <x-recaptcha />
+                            <input type="hidden" name="captcha_status" value="true" />
+                            @error('g-recaptcha-response')
+                                <small class="text-red-500">
+                                    {{ $message }}
+                                </small>
+                            @enderror
+                        </div>
+                    @endif
                     <button class="px-6 py-2.5 bg-primary rounded-full text-secondary font-bold shadow hover:scale-105 transition-transform duration-300">Kirim</button>
                 </form>
             </div>

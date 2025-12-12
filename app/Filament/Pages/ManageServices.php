@@ -11,12 +11,17 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Fieldset;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use UnitEnum;
 
 class ManageServices extends SettingsPage
 {
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static string $settings = SettingService::class;
+
+    protected static string | UnitEnum | null $navigationGroup = 'Services';
+
+    protected static ?int $navigationSort = 4;
 
     public function form(Schema $schema): Schema
     {

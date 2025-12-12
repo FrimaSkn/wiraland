@@ -22,6 +22,8 @@ class ManageHome extends SettingsPage
 
     protected static string $settings = SettingHome::class;
 
+    protected static ?int $navigationSort = 1;
+
     public function form(Schema $schema): Schema
     {
         return $schema

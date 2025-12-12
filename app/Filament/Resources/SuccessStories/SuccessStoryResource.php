@@ -25,6 +25,7 @@ class SuccessStoryResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Success Stories';
 
+    protected static ?int $navigationSort = 12;
 
     public static function form(Schema $schema): Schema
     {
