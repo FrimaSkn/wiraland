@@ -4,8 +4,9 @@
         init() {
             if (!window.recaptcha) {
                 const script = document.createElement('script');
-                script.src = 'https://www.google.com/recaptcha/enterprise.js?render=' + this.siteKey;
+                script.src = 'https://www.google.com/recaptcha/api.js?render=' + this.siteKey;
                 document.body.append(script);
+                console.log(script);
             }
         },
 
