@@ -8,7 +8,7 @@
         <div class="image-section">
             <img class="w-full h-auto object-cover" src="{{ asset('assets/images/img-04.jpg') }}" alt="{{ config('app.name') }}">
         </div>
-        <div class="content-section">
+        <div class="content-section max-lg:px-4">
             <h3 class="section-title !text-white text-underline left">Kisah Sukses</h3>
             <h4 class="text-2xl font-semibold italic text-white mb-6">Inovasi Kreatif dan Cepat untuk <br> Menyambut Pemimpin Dunia</h4>
             <p class="text-white mb-6 lg:text-lg">Menjelang G20 2022, Bali dipercantik dengan penataan landscape yang memadukan keindahan alam dan kekayaan budaya. Jalan utama hingga kawasan Nusa Dua dihiasi taman bunga berwarna-warni, pepohonan tropis yang tertata rapi, serta ornamen khas Bali yang memberi sentuhan hangat dan elegan. Semua ini menjadi wujud keramahan Indonesia sekaligus menyambut tamu dunia sekaligus memperlihatkan pesona Bali sebagai destinasi kelas internasional.</p>

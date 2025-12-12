@@ -1,7 +1,7 @@
 <section class="container pb-16">
     <h3 class="section-title text-center">Profesional Terbaik di Balik Setiap Karya Kami</h3>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         @foreach ($teams as $team)
 
             <div class="border border-gray-300 rounded-2xl px-4 pt-8 pb-4 aspect-[245/313] flex flex-col justify-center relative

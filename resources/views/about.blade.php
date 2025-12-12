@@ -9,8 +9,8 @@
 <section class="bg-secondary mx-[1%] rounded-4xl p-10 space-y-8">
     <div class="bg-primary py-2 px-4 text-white rounded-full w-fit font-bold">Misi Kami</div>
     <div class="grid md:grid-cols-2 gap-4 md:gap-[10%]">
-        <div class="rounded-2xl md:rounded-[3rem] overflow-hidden">
-            <img class="w-full h-auto object-cover object-center"
+        <div class="">
+            <img class="w-full h-auto rounded-2xl md:rounded-[3rem] object-cover object-center"
                 src="{{ Storage::disk('public_pages')->url($mission['image_misi']) }}" alt="">
         </div>
         <div class="*:list-disc *:space-y-4">

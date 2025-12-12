@@ -15,7 +15,7 @@
 
     <x-circular />
 
-    <section class="pt-20 lg:pt-60 pb-20 container space-y-6">
+    <section class="pt-20 md:pt-40 lg:pt-60 pb-20 container space-y-6">
         <h3 class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">{{ $homeContent->section_one_title }}</h3>
         <p class="text-center">{{ nl2br($homeContent->section_one_desc) }}</p>
         <video class="w-full aspect-video" controls>
@@ -57,7 +57,7 @@
 
     <section class="container pb-20">
         <h3 class="section-title text-center text-underline">Artikel</h3>
-        <div class="grid lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-6">
             @for ($i = 0; $i < 3; $i++)
                 <div class="space-y-3">
                     <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">

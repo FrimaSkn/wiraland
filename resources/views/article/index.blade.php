@@ -8,7 +8,7 @@
     desc="{{ $grid_desc }}" />
 
 <section class="my-20 container">
-    <div class="grid lg:grid-cols-3 gap-x-10 gap-y-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
         @for ($i = 0; $i < 6; $i++)
             <div class="col-span-1 space-y-5">
                 <div class="w-full aspect-square rounded-4xl bg-gray-200"></div>
