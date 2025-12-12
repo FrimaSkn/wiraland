@@ -28,3 +28,5 @@ Route::group(['prefix' => 'kontak', 'as' => 'contact.'], function () {
 Route::get('/faq', [App\Http\Controllers\FaqController::class, 'index'])->name('faq');
 
 Route::get('/testimonial', [App\Http\Controllers\TestimonialController::class, 'index'])->name('testimonial');
+
+Route::post('/subscribe', [App\Http\Controllers\EmailSubscriptionController::class, 'store'])->name('subscribe');

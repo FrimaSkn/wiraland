@@ -24,13 +24,14 @@ class ContactController extends Controller
 
     public function store(StoreContactRequest $request)
     {
-        dd('masuk');
+        $validated = $request->validated();
 
         DB::beginTransaction();
         try {
             $store = Contact::create($validated);
         } catch (\Throwable $th) {
             DB::rollBack();
+            return redirect()->back()->with('success', 'Pesan kamu gagal dikirim, silahkan coba lagi');
             //throw $th;
         }
         DB::commit();
