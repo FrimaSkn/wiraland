@@ -28,7 +28,7 @@
                     </div>
                     <div>
                         <label for="message" class="block mb-2.5 text-base font-bold text-primary text-heading">Pesan</label>
-                        <textarea id="message" name="message" rows="8" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Isi pesan disini..."></textarea>
+                        <textarea id="message" name="message" rows="6" class="border-[1.8px] border-primary rounded-xl text-primary text-base rounded-base block w-full px-3.5 py-4 shadow-xs placeholder:text-body" placeholder="Isi pesan disini..."></textarea>
                     </div>
                     @if (env('GOOGLE_RECAPTCHA_STATUS'))
                         <div>
