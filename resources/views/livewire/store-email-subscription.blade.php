@@ -6,10 +6,8 @@
                 const script = document.createElement('script');
                 script.src = 'https://www.google.com/recaptcha/api.js?render=' + this.siteKey;
                 document.body.append(script);
-                console.log(script);
             }
         },
-
          doCaptcha() {
             grecaptcha.execute(this.siteKey, {action: 'submit'}).then(token => {
                 Livewire.dispatch('formSubmitted', {token: token});
