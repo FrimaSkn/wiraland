@@ -10,6 +10,10 @@
     <x-meta-head />
     @yield('meta')
 
+    @if (env('GOOGLE_RECAPTCHA_STATUS'))
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @endif
+
     @stack('before-styles')
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

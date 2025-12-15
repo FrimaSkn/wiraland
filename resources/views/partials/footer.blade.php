@@ -28,7 +28,7 @@
                 </form> --}}
                 <livewire:store-email-subscription />
             </div>
-            <div class="flex gap-[20%]">
+            <div class="flex gap-[20%] lg:w-[25%]">
                 <div>
                     <div class="font-bold text-white mb-6">Links</div>
                     <ul class="space-y-2 *:text-nowrap">

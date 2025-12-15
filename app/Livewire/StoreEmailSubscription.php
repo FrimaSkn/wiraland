@@ -4,46 +4,45 @@ namespace App\Livewire;
 
 use App\Models\EmailSubscription;
 use App\Rules\Captcha;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
-use Illuminate\Support\MessageBag;
-use Livewire\Attribute\On;
 
 class StoreEmailSubscription extends Component
 {
     public $email;
+    public $recaptcha;
+    public $captcha_status;
 
-    public function validateRecaptcha($token)
+    public function mount()
     {
-        // validate Google reCaptcha.
-        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
-            'response' => $token,
-            'remoteip' => request()->ip(),
-        ]);
-        $throw = fn ($message) => throw ValidationException::withMessages(['recaptcha' => $message]);
-        if (! $response->successful() || ! $response->json('success')) {
-            $throw($response->json(['error-codes'])[0] ?? 'An error occurred.');
-        }
-        // if response was score based (the higher the score, the more trustworthy the request)
-        if ($response->json('score') < 0.6) {
-            $throw('We were unable to verify that you\'re not a robot. Please try again.');
-        }
+        $this->captcha_status = env('GOOGLE_RECAPTCHA_STATUS');
     }
 
-    #[On('formSubmitted')]
-    public function submit($token)
+    public function store()
     {
         $this->validate([
             'email' => 'required|email',
         ]);
 
-        $this->validateRecaptcha($token);
+        if($this->captcha_status) {
+            $this->validate([
+                'recaptcha' => ['required', new Captcha],
+            ]);
+        }
 
-        EmailSubscription::create([
-            'email' => $this->email
-        ]);
+        DB::beginTransaction();
+        try {
+            $store = EmailSubscription::create([
+                'email' => $this->email
+            ]);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->back()->with('success', 'Pesan kamu gagal dikirim, silahkan coba lagi');
+            //throw $th;
+        }
+        DB::commit();
+
+        return redirect()->back()->with('success', 'Pesan kamu berhasil dikirim');
     }
 
     public function render()
