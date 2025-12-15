@@ -48,8 +48,8 @@ class EmailSubscriptionResource extends Resource
     {
         return [
             'index' => ListEmailSubscriptions::route('/'),
-            'create' => CreateEmailSubscription::route('/create'),
-            'edit' => EditEmailSubscription::route('/{record}/edit'),
+            // 'create' => CreateEmailSubscription::route('/create'),
+            // 'edit' => EditEmailSubscription::route('/{record}/edit'),
         ];
     }
 }

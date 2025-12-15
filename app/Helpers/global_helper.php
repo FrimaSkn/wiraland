@@ -10,3 +10,10 @@ if (!function_exists('activeMenu')) {
         return $active;
     }
 }
+
+if (!function_exists('storyPayload')) {
+    function storyPayload($payload, $type) {
+        $data = collect($payload)->where('type', $type)->first();
+        return nl2br($data['data']['text']);
+    }
+}

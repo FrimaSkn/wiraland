@@ -1,8 +1,8 @@
 <div>
     <ul class="grid grid-cols-3 md:grid-cols-5">
-        @foreach ($clients as $client)
+        @foreach ($clients as $key => $client)
             <li class="p-2">
-                <img src="{{ $client->getFirstMediaUrl('partner_logo') }}" alt="{{ $client->name }}">
+                <img data-aos="fade-up" data-aos-delay="{{ $key * 100 }}" src="{{ $client->getFirstMediaUrl('partner_logo') }}" alt="{{ $client->name }}">
             </li>
         @endforeach
     </ul>

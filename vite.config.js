@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
+import * as path from 'path';
 
 export default defineConfig({
     plugins: [
@@ -10,4 +11,9 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    resolve: {
+        alias: [
+            { find: '@aos', replacement: path.resolve(__dirname, './node_modules/aos/dist/aos.css') },
+        ],
+    },
 });

@@ -19,11 +19,12 @@ class SuccessStoryForm
                 Grid::make(1)->schema([
                     SpatieMediaLibraryFileUpload::make('image')
                             ->collection('success_story_image')
+                            ->disk('public_story')
                             ->image()
                             ->required(),
                 ])->columnSpan(4),
                 Grid::make(1)->schema([
-                    TextInput::make('title')
+                    Textarea::make('title')
                         ->required()
                         ->columnSpanFull(),
                     Textarea::make('description')

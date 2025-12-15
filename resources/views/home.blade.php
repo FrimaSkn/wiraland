@@ -16,17 +16,33 @@
     <x-circular />
 
     <section class="pt-20 md:pt-40 lg:pt-60 pb-20 container space-y-6">
-        <h3 class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">{{ $homeContent->section_one_title }}</h3>
-        <p class="text-center">{{ nl2br($homeContent->section_one_desc) }}</p>
-        <video class="w-full aspect-video" controls>
-            <source src="{{ Storage::disk('public_pages')->url($homeContent->section_one_video) }}" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-        </video>
+        <h3 data-aos="fade-up" class="text-center text-primary text-lg lg:text-[2.7rem] font-bold leading-tight">{{ $homeContent->section_one_title }}</h3>
+        <p data-aos="fade-up" data-aos-delay="50" class="text-center">{{ nl2br($homeContent->section_one_desc) }}</p>
+        <div data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-center">
+            <video class="video-js vjs-default-skin vjs-big-play-centered"
+                id="my-video"
+                controls
+                preload="auto"
+                {{-- poster="{{ asset('assets/images/about-banner.jpg') }}" --}}
+                data-setup="{}"
+            >
+                <source src="{{ Storage::disk('public_pages')->url($homeContent->section_one_video) }}" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                        >supports HTML5 video</a
+                    >
+                    </p>
+            </video>
+
+        </div>
     </section>
 
     <section class="grid grid-cols-3">
-        @foreach ($homeContent->services as $service)
-            <div class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ Storage::disk('public_pages')->url($service['image']) }}')">
+        @foreach ($homeContent->services as $key => $service)
+            <div data-aos="fade-up" data-aos-delay="{{ $key * 100 }}" data-aos-duration="800" class="w-full aspect-[9/10] bg-center bg-cover flex items-center justify-center" style="background-image: url('{{ Storage::disk('public_pages')->url($service['image']) }}')">
                 <h3 class="text-center text-white text-xs lg:text-3xl font-bold">{{ strtoupper($service['text']) }}</h3>
             </div>
         @endforeach
@@ -53,13 +69,36 @@
         <livewire:home-portfolio />
     </section>
 
-    <x-success-story page="home" />
+    <section class="success-story home">
+        <div class="image-section">
+            <img class="w-full h-auto object-cover" src="{{ $successStory->getFirstMediaUrl('success_story_image') }}" alt="{{ config('app.name') }}">
+        </div>
+        <div class="content-section max-lg:px-4">
+            <h3 data-aos="fade-up" class="section-title !text-white text-underline left">Kisah Sukses</h3>
+            <h4 data-aos="fade-right" class="text-2xl font-semibold italic text-white mb-6">{!! nl2br($successStory->title) !!}</h4>
+            <p data-aos="fade-right" class="text-white mb-6 lg:text-lg 2xl:w-9/12">{!! nl2br($successStory->description) !!}</p>
+            <div class="flex gap-[20%] mb-6">
+                <div data-aos="fade-right">
+                    <h4 class="text-base font-semibold text-secondary uppercase">Durasi:</h4>
+                    <h3 class="text-white fort-bold text-2xl">{!! storyPayload($successStory->payload, 'duration') !!}</h3>
+                </div>
+                <div data-aos="fade-right">
+                    <h4 class="text-base font-semibold text-secondary uppercase">JUMLAH PEKERJA:</h4>
+                    <h3 class="text-white fort-bold text-2xl">{!! storyPayload($successStory->payload, 'manpower') !!}</h3>
+                </div>
+            </div>
+            <div data-aos="fade-right">
+                <h4 class="text-base font-semibold text-secondary uppercase">JENIS TANAMAN:</h4>
+                <h3 class="text-white fort-bold text-2xl">{!! storyPayload($successStory->payload, 'type_plant') !!}</h3>
+            </div>
+        </div>
+    </section>
 
     <section class="container pb-20">
-        <h3 class="section-title text-center text-underline">Artikel</h3>
+        <h3 data-aos="fade-in" class="section-title text-center text-underline">Artikel</h3>
         <div class="grid md:grid-cols-3 gap-6">
             @for ($i = 0; $i < 3; $i++)
-                <div class="space-y-3">
+                <div class="space-y-3" data-aos="fade-up">
                     <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
                     <h2 class="font-bold text-primary leading-4">Judul Artikel</h2>
                     <p class="leading-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
@@ -73,8 +112,8 @@
 
     <section class="bg-center bg-cover pb-20" style="background-image: url('{{ asset('assets/images/bg-testimonial.jpg') }}')">
         <div class="container">
-            <h3 class="section-title text-center text-underline primary">Testimonial</h3>
-            <div class="bg-white py-3 lg:py-6 px-6 lg:px-16 rounded-3xl">
+            <h3 data-aos="fade-in" class="section-title text-center text-underline primary">Testimonial</h3>
+            <div class="bg-white py-3 lg:py-6 px-6 lg:px-16 rounded-3xl" data-aos="fade-up">
                 <div class="py-4 lg:py-10"><x-star class="fill-secondary"/></div>
                 <p class="text-center lg:text-xl lg:leading-loose">“PT Wira Land Sketsa telah memberikan pelayanan yang sangat profesional dalam penataan landscape. Mulai dari perencanaan hingga hasil akhir, semuanya dikerjakan dengan detail, rapi, dan sesuai kebutuhan kami. Hasilnya tidak hanya mempercantik area, tetapi juga meningkatkan nilai properti. Kami sangat mengapresiasi dedikasi dan kualitas kerja tim Wira Land Sketsa.”</p>
                 <div class="text-center text-xl mt-8"><span class="text-primary font-bold">Jonathan Doe,</span> Direktur Sarinah Indonesia</div>

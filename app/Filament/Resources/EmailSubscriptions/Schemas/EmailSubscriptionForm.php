@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\EmailSubscriptions\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
 
 class EmailSubscriptionForm
 {
@@ -10,7 +11,8 @@ class EmailSubscriptionForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('email')
+                ->columnSpanFull()
             ]);
     }
 }

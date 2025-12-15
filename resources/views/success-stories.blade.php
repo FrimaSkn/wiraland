@@ -8,11 +8,7 @@
         desc="{{ $grid_desc }}" />
 
     <div class="mt-20 lg:mt-32 mb-20">
-        <x-success-story :loop="3" />
-    </div>
-
-    <div class="flex justify-center mb-20 lg:mb-32">
-        <a href="#" class="px-4 py-1 text-sm rounded-full shadow bg-secondary hover:bg-primary hover:text-white transition-color duration-300">Selengkapnya</a>
+        <livewire:success-stories />
     </div>
 
     <x-section-contact />

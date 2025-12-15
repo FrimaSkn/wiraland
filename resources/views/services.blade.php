@@ -4,13 +4,13 @@
 
 <x-banner-hero image="{{ Storage::disk('public_pages')->url($banner) }}" />
 <section class="pb-8 md:pb-16">
-    <h3 class="section-title text-center text-underline">Layanan Kami</h3>
+    <h3 data-aos="fade-in" class="section-title text-center text-underline">Layanan Kami</h3>
 
     <x-grid-paragraf :title="$grid_title" :desc="$grid_desc" />
 
     <div class="container mt-20 space-y-12">
-        @foreach ($services as $service)
-            <div class="card-service">
+        @foreach ($services as $key => $service)
+            <div data-aos="fade-up" data-aos-delay="{{ $key * 100 }}" class="card-service">
                 <div class="col-span-3">
                     <img class="rounded-4xl w-full aspect-[389/335] object-cover" src="{{ Storage::disk('public_pages')->url($service['image']) }}" alt="{{ config('app.name') .' - '. $service['title'] }} ">
                 </div>
@@ -26,11 +26,11 @@
 </section>
 
 <section class="mb-20">
-    <h3 class="section-title text-center">{!! nl2br($section_two_title) !!}</h3>
+    <h3 data-aos="fade-in" class="section-title text-center">{!! nl2br($section_two_title) !!}</h3>
 
     <div class="grid lg:grid-cols-3 mx-6 gap-10">
-        @foreach ($section_two as $item)
-            <div class="rounded-4xl bg-primary p-8">
+        @foreach ($section_two as $key => $item)
+            <div data-aos="fade-up" data-aos-delay="{{ $key * 100 }}" class="rounded-4xl bg-primary p-8">
                 <img class="size-12" src="{{ Storage::disk('public_pages')->url($item['icon']) }}" alt="">
                 <h3 class="section-title !py-8 !text-white">{{ $item['title'] }}</h3>
                 <p class="text-white">{{ $item['desc'] }}</p>

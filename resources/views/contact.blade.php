@@ -3,11 +3,11 @@
 @section('content')
     <x-banner-hero image="{{ Storage::disk('public_pages')->url($banner) }}" />
 
-    <h3 id="contact-form" class="section-title text-center text-underline">Kontak Kami</h3>
+    <h3 data-aos="fade-in" id="contact-form" class="section-title text-center text-underline">Kontak Kami</h3>
     <x-grid-paragraf title="{{ $grid_title }}"
         desc="{{ $grid_desc }}" />
 
-    <section class="bg-secondary mx-2 lg:mx-8 mt-10 rounded-4xl lg:rounded-[3rem] mb-20 p-4 lg:p-10">
+    <section data-aos="fade-up" data-aos-delay="100" class="bg-secondary mx-2 lg:mx-8 mt-10 rounded-4xl lg:rounded-[3rem] mb-20 p-4 lg:p-10">
         <div class="flex lg:flex-row flex-col gap-16">
             <div class="basis-[45%] 2xl:basis-[35%]"><img class="w-full max-lg:aspect-square object-top h-auto object-cover rounded-3xl lg:rounded-[3rem] 2xl:rounded-[4rem]" src="{{ asset('assets/images/image-contact.jpg') }}" alt=""></div>
             <div class="basis-[55%] 2xl:basis-[65%]">

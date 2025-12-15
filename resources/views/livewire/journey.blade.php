@@ -7,7 +7,7 @@
     <div class="journey">
         <div class="space-y-28 parent">
             @foreach ($visibleJourneys as $journey)
-                <div class="child">
+                <div data-aos="fade-up" class="child">
                     <div class="right_content">
                         <h2 class="leading-none">{{ $journey['year'] }}</h2>
                         <img src="{{ Storage::disk('public_pages')->url($journey['image']) }}" alt="">

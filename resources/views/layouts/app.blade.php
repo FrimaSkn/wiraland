@@ -38,5 +38,6 @@
     @stack('before-scripts')
     @livewireScripts
     @stack('after-scripts')
+    <script src="https://vjs.zencdn.net/8.23.4/video.min.js"></script>
 </body>
 </html>

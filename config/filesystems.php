@@ -105,6 +105,15 @@ return [
             'report' => false,
         ],
 
+        'public_story' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/story'),
+            'url' => env('APP_URL').'/storage/story',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*

@@ -3,14 +3,14 @@
 @section('content')
 <x-banner-hero image="{{ Storage::disk('public_pages')->url($banner) }}" />
 
-<h3 class="section-title text-center text-underline">Artikel</h3>
+<h3 data-aos="fade-in" class="section-title text-center text-underline">Artikel</h3>
 <x-grid-paragraf title="{{ $grid_title }}"
     desc="{{ $grid_desc }}" />
 
 <section class="my-20 container">
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
         @for ($i = 0; $i < 6; $i++)
-            <div class="col-span-1 space-y-5">
+            <div data-aos="fade-up" data-aos-delay="" class="col-span-1 space-y-5">
                 <div class="w-full aspect-square rounded-4xl bg-gray-200"></div>
                 <h2 class="text-lg text-primary font-bold">title artikel judul artikel</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id earum commodi reiciendis sequi temporibus tempora non,</p>
