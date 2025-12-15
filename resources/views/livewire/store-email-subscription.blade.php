@@ -24,10 +24,6 @@
             {{ $message }}
         </small>
     @enderror
-
-    <small class="text-green-400">
-        test
-    </small>
 </form>
 <script>
     function onCallback(token) {
