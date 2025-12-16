@@ -14,8 +14,8 @@ Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'inde
 
 Route::group(['prefix' => 'artikel', 'as' => 'article.'], function () {
     Route::get('/', [App\Http\Controllers\ArticleController::class, 'index'])->name('index');
-    Route::get('/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('show');
-    // Route::get('/{slug}', [App\Http\Controllers\ArticleController::class, 'show'])->name('show');
+    // Route::get('/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('show');
+    Route::get('/{slug}', [App\Http\Controllers\ArticleController::class, 'show'])->name('show');
 });
 
 Route::get('/success-stories', [App\Http\Controllers\SuccessStoriesController::class, 'index'])->name('success-stories');

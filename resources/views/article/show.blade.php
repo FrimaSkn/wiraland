@@ -3,10 +3,10 @@
 @section('content')
 
 <section class="my-10 lg:my-20 container space-y-5">
-    <img src="{{ asset('assets/images/banner-services.jpg') }}" alt="">
-    <h1 class="text-xl md:text-3xl font-bold">Judul Artikel Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos odit debitis nisi voluptatibus, recusandae ipsa praesentium sed!</h1>
+    <img src="{{ $post->getFirstMediaUrl('article_image') == null ? asset('assets/images/about-banner.jpg') : $post->getFirstMediaUrl('article_image') }}" alt="">
+    <h1 class="text-xl md:text-3xl font-bold text-primary">{{ $post->title }}</h1>
     <article>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In laudantium asperiores molestias ipsum earum, perspiciatis deleniti dolorum facere similique reprehenderit. Perferendis veniam quisquam eveniet ullam tenetur reprehenderit, vel vero enim?
+        {!! $post->content !!}
     </article>
 </section>
 

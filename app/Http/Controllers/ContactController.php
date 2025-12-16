@@ -31,7 +31,7 @@ class ContactController extends Controller
             $store = Contact::create($validated);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect()->back()->with('success', 'Pesan kamu gagal dikirim, silahkan coba lagi');
+            return redirect()->back()->with('error', 'Pesan kamu gagal dikirim, silahkan coba lagi');
             //throw $th;
         }
         DB::commit();

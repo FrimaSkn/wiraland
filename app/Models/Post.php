@@ -7,10 +7,11 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model implements HasMedia
 {
-    use HasSlug, InteractsWithMedia;
+    use HasFactory ,HasSlug, InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -45,5 +46,10 @@ class Post extends Model implements HasMedia
         $this
         ->addMediaCollection('article_image')
         ->useDisk('public_articles');
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published');
     }
 }

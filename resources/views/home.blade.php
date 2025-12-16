@@ -97,13 +97,13 @@
     <section class="container pb-20">
         <h3 data-aos="fade-in" class="section-title text-center text-underline">Artikel</h3>
         <div class="grid md:grid-cols-3 gap-6">
-            @for ($i = 0; $i < 3; $i++)
+            @foreach ($articles as $post)
                 <div class="space-y-3" data-aos="fade-up">
                     <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
-                    <h2 class="font-bold text-primary leading-4">Judul Artikel</h2>
-                    <p class="leading-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+                    <h2 class="font-bold text-primary leading-4">{{ $post->title }}</h2>
+                    <p class="leading-4">{{ $post->excerpt }}</p>
                 </div>
-            @endfor
+            @endforeach
         </div>
         <div class="flex justify-center mt-10">
             <a href="{{ route('article.index') }}" class="px-2.5 py-0.5 text-sm rounded-full bg-secondary hover:bg-primary uppercase font-medium hover:text-white">Lihat Semua Artikel</a>

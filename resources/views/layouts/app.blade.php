@@ -26,6 +26,8 @@
 </head>
 <body>
     @include('partials.nav')
+    <x-toast />
+
 
     <div id="app" class="overflow-hidden">
         <main>

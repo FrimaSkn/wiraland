@@ -15,11 +15,12 @@ class PostsTable
     {
         return $table
             ->columns([
-                SpatieMediaLibraryImageColumn::make('avatar')
+                SpatieMediaLibraryImageColumn::make('image')
                     ->collection('article_image')
                     ->label('Image')
                     ->disk('public_articles'),
-                TextColumn::make('title'),
+                TextColumn::make('title')
+                    ->searchable(),
                 TextColumn::make('excerpt')->limit(50),
                 TextColumn::make('status')
                     ->badge()
@@ -32,6 +33,7 @@ class PostsTable
                     ->label('Created At')
                     ->dateTime('d M Y'),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

@@ -12,6 +12,8 @@ class StoreEmailSubscription extends Component
     public $email;
     public $recaptcha;
     public $captcha_status;
+    public $status;
+    public $message;
 
     public function mount()
     {
@@ -21,7 +23,7 @@ class StoreEmailSubscription extends Component
     public function store()
     {
         $this->validate([
-            'email' => 'required|email',
+            'email' => 'required|unique:email_subscriptions|email',
         ]);
 
         if($this->captcha_status) {
@@ -37,12 +39,24 @@ class StoreEmailSubscription extends Component
             ]);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect()->back()->with('success', 'Pesan kamu gagal dikirim, silahkan coba lagi');
-            //throw $th;
+            $this->status = 'error';
+            $this->message = 'Terjadi kesalahan, silahkan coba lagi';
+            return redirect(request()->header('Referer'))->with('error', 'Terjadi kesalahan, silahkan coba lagi');
+
         }
         DB::commit();
 
-        return redirect()->back()->with('success', 'Pesan kamu berhasil dikirim');
+        $this->status = 'success';
+        $this->message = 'Terima kasih telah berlangganan';
+        $this->resetAll();
+
+        return redirect(request()->header('Referer'))->with('success', 'Terima kasih telah berlangganan');
+    }
+
+    public function resetAll()
+    {
+        $this->email = null;
+        $this->recaptcha = null;
     }
 
     public function render()
