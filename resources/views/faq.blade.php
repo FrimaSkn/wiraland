@@ -21,9 +21,8 @@
                     </button>
 
                     <div class="relative overflow-hidden transition-all max-h-0 duration-700 bg-secondary rounded-b-3xl" style=""
-                        x-ref="container1"
-                        x-bind:style="selected == {{ $faq->id }} ? 'max-height: ' + ($refs.container1.scrollHeight + 40) + 'px' : ''">
-                        <div class="p-4 md:p-8">
+                        x-bind:style="selected == {{ $faq->id }} ? 'max-height: ' + ($refs.container1.scrollHeight * 100) + 'px' : ''">
+                        <div x-ref="container1" class="p-4 md:p-8">
                             {!! $faq->answer !!}
                         </div>
                     </div>
