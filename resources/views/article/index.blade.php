@@ -9,8 +9,8 @@
 
 <section class="my-20 container">
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
-        @foreach ($articles as $post)
-            <div data-aos="fade-up" data-aos-delay="" class="col-span-1 space-y-5 flex flex-col justify-between">
+        @foreach ($articles as $key => $post)
+            <div data-aos="fade-up" data-aos-delay="{{ $key * 100 }}" class="col-span-1 space-y-5 flex flex-col justify-between">
                 <div class="w-full aspect-square rounded-4xl bg-gray-200 overflow-hidden group">
                     <img class="w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-300" src="{{ $post->getFirstMediaUrl('article_image') == null ? asset('assets/images/about-banner.jpg') : $post->getFirstMediaUrl('article_image') }}" alt="">
                 </div>
