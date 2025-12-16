@@ -22,6 +22,7 @@
             <video class="video-js vjs-default-skin vjs-big-play-centered"
                 id="my-video"
                 controls
+                playsinline
                 preload="auto"
                 {{-- poster="{{ asset('assets/images/about-banner.jpg') }}" --}}
                 data-setup="{}"
