@@ -1,4 +1,4 @@
-{{-- @if (session('success')) --}}
+@if (session('success'))
     <div class="fixed top-20 lg:top-48 right-2 z-[99]"
         x-data="{ show: true }"
         x-show="show"
@@ -36,7 +36,7 @@
             </progress>
         </div>
     </div>
-{{-- @endif --}}
+@endif
 
 @if (session('error'))
     <div class="fixed top-20 lg:top-48 right-2 z-[99]"
