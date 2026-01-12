@@ -24,6 +24,6 @@
         </div>
     </div>
     <div wire:click="loadMore" class="flex justify-center">
-        <button @disabled(count($visibleJourneys) > count($journeys)) @class(['bg-gray-200', 'bg-secondary hover:bg-primary' => count($journeys) > count($visibleJourneys), 'px-3 py-1.5 text-sm rounded-full font-bold hover:text-white transition-color duration-300'])>Lihat perjalanan lengkap kami</button>
+        <button @disabled(count($visibleJourneys) >= count($journeys)) @class(['bg-gray-200', 'bg-secondary hover:bg-primary' => count($journeys) > count($visibleJourneys), 'px-3 py-1.5 text-sm rounded-full font-bold hover:text-white transition-color duration-300'])>Lihat perjalanan lengkap kami</button>
     </div>
 </section>

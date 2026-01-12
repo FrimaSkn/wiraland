@@ -16,4 +16,7 @@ export default defineConfig({
             { find: '@aos', replacement: path.resolve(__dirname, './node_modules/aos/dist/aos.css') },
         ],
     },
+    build: {
+        chunkSizeWarningLimit: 1600,
+    },
 });

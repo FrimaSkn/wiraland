@@ -16,6 +16,6 @@
     </div>
 
      <div class="flex justify-center mt-10">
-        <button wire:click="loadMore" @disabled(count($teams) > $count) @class(['bg-gray-200', 'bg-secondary hover:bg-primary' => count($teams) < $count , 'px-3 py-1.5 text-sm rounded-full font-bold hover:text-white transition-color duration-300'])>Lihat Semua Tim</button>
+        <button wire:click="loadMore" @disabled(count($teams) >= $count) @class(['bg-gray-200', 'bg-secondary hover:bg-primary' => count($teams) < $count , 'px-3 py-1.5 text-sm rounded-full font-bold hover:text-white transition-color duration-300'])>Lihat Semua Tim</button>
     </div>
 </section>
