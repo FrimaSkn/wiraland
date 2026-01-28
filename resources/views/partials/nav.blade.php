@@ -1,5 +1,5 @@
-<div x-data="{ openMenu: false }" class="w-full py-2 lg:pt-4 lg:pb-10 shadow bg-white sticky z-[99] top-0">
-    <div class="container flex justify-between items-center">
+<div x-data="{ openMenu: false }" class="w-full py-4 lg:pt-4 lg:pb-10 shadow bg-white sticky z-[99] top-0">
+    <div class="container flex justify-between items-center relative">
         <div class="flex items-center gap-1">
             <!-- Mobile Menu Toggle -->
             <button class="btn_toggle lg:hidden" @click="openMenu = !openMenu" :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Navigation Menu">
@@ -9,8 +9,8 @@
                     <line x1="0" y1="50%" x2="100%" y2="50%" class="bottom" shape-rendering="crispEdges" />
                 </svg>
             </button>
-            <a href="{{ route('home') }}" class="flex items-center justify-center">
-                <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-12 md:h-16">
+            <a href="{{ route('home') }}" class="flex items-center justify-center max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2">
+                <img src="{{ asset('assets/brand/logo-wiraland.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-12 md:h-18">
             </a>
         </div>
         <div class="max-md:hidden">
