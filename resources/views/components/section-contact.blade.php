@@ -1,5 +1,6 @@
-<div class="bg-center bg-cover py-12 lg:py-20" style="background-image: url('{{ asset('assets/images/bg-contact.jpg') }}">
-    <div class="container">
+<div class="bg-center bg-cover py-12 lg:py-20 relative" style="background-image: url('{{ asset('assets/images/bg-contact.jpg') }}">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-none"></div>
+    <div class="container relative z-10">
         <div class="text-white text-lg lg:text-5xl font-bold mb-10 lg:mb-18">Siap wujudkan ruang impian <br>
             bersama Wira Land?
         </div>

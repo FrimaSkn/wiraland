@@ -14,13 +14,15 @@
             </a>
         </div>
         <div class="max-md:hidden">
-            <h3 class="text-xs md:text-xl">LANDSCAPE SPECIALIST</h3>
-            <h4 class="text-[9px] md:text-xs font-bold flex items-center space-x-1">
+            <h3 class="text-xs md:text-2xl">LANDSCAPE SPECIALIST</h3>
+            <h4 class="text-[9px] md:text-[11px] font-bold flex items-center space-x-1">
                 <span>DESIGN</span>
                 <span class="size-1 rounded-full bg-black"></span>
                 <span>BUILD</span>
                 <span class="size-1 rounded-full bg-black"></span>
                 <span>MAINTENANCE</span>
+                <span class="size-1 rounded-full bg-black"></span>
+                <span>PLANT SUPPLY</span>
             </h4>
         </div>
     </div>
