@@ -1,7 +1,7 @@
 <footer class="bg-primary">
     <div class="container pt-10 lg:pt-20">
         <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{ asset('assets/brand/logo-03.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-20 -ml-4">
+            <img src="{{ asset('assets/brand/logo-white.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-20 max-md:ml-1 md:h-40 -ml-4">
         </a>
         <div class="flex max-lg:flex-col justify-between">
             <div class="max-lg:mb-8">
