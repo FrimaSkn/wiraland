@@ -14,7 +14,6 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 
     --font-montserraat: "Montserrat", sans-serif;
-    --font-bayshore: "Bayshore", sans-serif;
     --font-birthstone : "Birthstone", sans-serif;
 
     /* --color-primary: #006838; */
@@ -143,7 +142,7 @@
     }
 
     .nav-menu {
-        @apply max-lg:space-y-2 lg:grid grid-cols-8 text-center items-center *:hover:bg-primary *:hover:text-white transition-colors duration-300 gap-0.5;
+        @apply max-lg:space-y-2 lg:grid grid-cols-9 text-center items-center *:hover:bg-primary *:hover:text-white transition-colors duration-300 gap-0.5;
 
         .nav-link {
             @apply text-xs lg:text-[13px] font-bold leading-none uppercase block py-5;
