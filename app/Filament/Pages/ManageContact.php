@@ -19,7 +19,7 @@ class ManageContact extends SettingsPage
 
     protected static string | UnitEnum | null $navigationGroup = 'Contact';
 
-    protected static ?int $navigationSort = 13;
+    protected static ?int $navigationSort = 14;
 
     public function form(Schema $schema): Schema
     {

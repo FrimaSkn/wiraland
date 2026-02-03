@@ -8,5 +8,6 @@ class EmailSubscription extends Model
 {
     protected $fillable = [
         'email',
+        'downloaded_catalogue',
     ];
 }

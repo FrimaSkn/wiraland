@@ -19,7 +19,7 @@ class ManageClients extends SettingsPage
 
     protected static string | UnitEnum | null $navigationGroup = 'Clients';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
 
     public function form(Schema $schema): Schema
     {

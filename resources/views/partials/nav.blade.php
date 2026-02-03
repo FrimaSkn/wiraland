@@ -10,7 +10,7 @@
                 </svg>
             </button>
             <a href="{{ route('home') }}" class="flex items-center justify-center max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2">
-                <img src="{{ asset('assets/brand/logo-wiraland.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-12 md:h-18">
+                <img src="{{ asset('assets/brand/logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="h-12 md:h-18">
             </a>
         </div>
         <div class="max-md:hidden">
@@ -45,11 +45,11 @@
                             Services
                         </a>
                     </li>
-                    {{-- <li>
-                        <a href="{{ route('service') }}" class="nav-link {{ activeMenu('home') }}">
+                    <li>
+                        <a href="{{ route('product') }}" class="nav-link {{ activeMenu('product') }}">
                             Product
                         </a>
-                    </li> --}}
+                    </li>
                     <li>
                         <a href="{{ route('client') }}" class="nav-link {{ activeMenu('client') }}">
                             CLIENTS

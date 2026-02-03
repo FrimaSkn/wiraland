@@ -19,7 +19,7 @@ class ManageSuccessStories extends SettingsPage
 
     protected static string | UnitEnum | null $navigationGroup = 'Success Stories';
 
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 12;
 
     public function form(Schema $schema): Schema
     {

@@ -8,6 +8,9 @@ Route::get('/tentang-kami', [App\Http\Controllers\AboutController::class, 'index
 
 Route::get('/layanan', [App\Http\Controllers\ServiceController::class, 'index'])->name('service');
 
+Route::get('/produk', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
+Route::post('/produk/download-catalogue', [App\Http\Controllers\ProductController::class, 'downloadProductCatalogue'])->name('product.download-catalogue');
+
 Route::get('/klien', [App\Http\Controllers\ClientController::class, 'index'])->name('client');
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index'])->name('portfolio');

@@ -25,7 +25,7 @@ class ContactResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Contact';
 
-    protected static ?int $navigationSort = 14;
+    protected static ?int $navigationSort = 15;
 
     public static function form(Schema $schema): Schema
     {
