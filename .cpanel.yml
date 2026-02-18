@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/wiraland/web_root/web_staging/
+    - export DEPLOYPATH=/home/wiraland/website/staging/
     - /bin/cp -R * $DEPLOYPATH
     - /bin/rm -rf $DEPLOYPATH/.git
     - /bin/rm -rf $DEPLOYPATH/.cpanel.yml
