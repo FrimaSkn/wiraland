@@ -6,7 +6,7 @@
         <div class="col-span-12 lg:col-span-7 pb-8 lg:pr-[20%] flex items-center">
             <div class="max-lg:text-center max-md:container">
                 <h3 data-aos="fade-right" class="section-title text-underline left-m-center">{{ $generalContent->director[0]['title'] }}</h3>
-                <p data-aos="fade-right" data-aos-delay="50" class="text-xl lg:text-5xl xl:text-7xl text-primary leading-none mb-4 font-birthstone">{!! nl2br($generalContent->director[0]['tagline']) !!}</p>
+                <p data-aos="fade-right" data-aos-delay="50" class="text-4xl lg:text-5xl xl:text-7xl text-primary leading-none mb-4 font-birthstone">{!! nl2br($generalContent->director[0]['tagline']) !!}</p>
                 <div class="mb-8" data-aos="fade-right" data-aos-delay="100">
                     {!! str($generalContent->director[0]['message'])->sanitizeHtml() !!}
                 </div>
