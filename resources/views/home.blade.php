@@ -97,18 +97,24 @@
 
     <section class="container pb-20">
         <h3 data-aos="fade-in" class="section-title text-center text-underline">Artikel</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-            @foreach ($articles as $post)
-                <div class="space-y-3" data-aos="fade-up">
-                    <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
-                    <h2 class="font-bold text-primary leading-4">{{ $post->title }}</h2>
-                    <p class="leading-4">{{ $post->excerpt }}</p>
-                </div>
-            @endforeach
-        </div>
-        <div class="flex justify-center mt-10">
-            <a href="{{ route('article.index') }}" class="px-2.5 py-0.5 text-sm rounded-full bg-secondary hover:bg-primary uppercase font-medium hover:text-white">Lihat Semua Artikel</a>
-        </div>
+        @if ($articles->isEmpty())
+            <div class="text-center py-20" data-aos="fade-in">
+                <h2 class="text-xl md:text-2xl font-bold text-primary">Belum ada artikel yang tersedia</h2>
+            </div>
+        @else
+            <div class="grid md:grid-cols-3 gap-6">
+                @foreach ($articles as $post)
+                    <div class="space-y-3" data-aos="fade-up">
+                        <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
+                        <h2 class="font-bold text-primary leading-4">{{ $post->title }}</h2>
+                        <p class="leading-4">{{ $post->excerpt }}</p>
+                    </div>
+                @endforeach
+            </div>
+            <div class="flex justify-center mt-10">
+                <a href="{{ route('article.index') }}" class="px-2.5 py-0.5 text-sm rounded-full bg-secondary hover:bg-primary uppercase font-medium hover:text-white">Lihat Semua Artikel</a>
+            </div>
+        @endif
     </section>
 
     <section class="bg-center bg-cover pb-20" style="background-image: url('{{ asset('assets/images/bg-testimonial.jpg') }}')">
