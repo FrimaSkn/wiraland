@@ -105,7 +105,7 @@
             <div class="grid md:grid-cols-3 gap-6">
                 @foreach ($articles as $post)
                     <div class="space-y-3" data-aos="fade-up">
-                        <img class="w-full h-auto aspect-video" src="{{ asset('assets/images/banner.png') }}" alt="">
+                        <img class="w-full h-auto aspect-video" src="{{ $post->getFirstMediaUrl('article_image') == null ? asset('assets/images/about-banner.jpg') : $post->getFirstMediaUrl('article_image') }}" alt="">
                         <h2 class="font-bold text-primary leading-4">{{ $post->title }}</h2>
                         <p class="leading-4">{{ $post->excerpt }}</p>
                     </div>
