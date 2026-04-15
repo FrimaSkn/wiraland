@@ -496,3 +496,8 @@
   }
 }
 /* end journey */
+
+
+.prose {
+    max-width: unset !important;
+}
